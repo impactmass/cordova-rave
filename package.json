@@ -1,0 +1,38 @@
+{
+  "name": "rave-cordova-ext",
+  "version": "1.0.0",
+  "description": "rave",
+  "main": "lib/index.js",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "core-js": "^2.4.1",
+    "joi": "^10.1.0",
+    "joi-browser": "^10.0.6",
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.6.3",
+    "npmlog": "^4.0.2",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node .",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:"
+  },
+  "browser": {
+    "joi": "joi-browser"
+  },
+  "keywords": [
+    "rave"
+  ],
+  "author": "Me",
+  "license": "MIT"
+}

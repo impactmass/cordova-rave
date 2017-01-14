@@ -17,8 +17,12 @@
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-mocha": "^3.0.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
     "vinyl-buffer": "^1.0.0",
@@ -37,7 +41,9 @@
     "joi": "joi-browser"
   },
   "keywords": [
-    "rave"
+    "rave",
+    "pay",
+    "accept payment"
   ],
   "author": "Me",
   "license": "MIT"

@@ -4,6 +4,8 @@
 
 This module helps you easily integrate Rave into your Cordova builds. Rave lets you receive payments locally and internationally with no hassles and zero set up fees. Read more about Rave [here](https://www.flutterwave.com). 
 
+![e.g](https://cloud.githubusercontent.com/assets/5229321/21958475/be1763c2-daaf-11e6-8df0-75f2e4f0168e.gif)
+
 ### Installation
 In your app directory:
 

@@ -1,11 +1,14 @@
 'use strict';
 
-var browserify = require('browserify');
-var gulp = require('gulp');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var uglify = require('gulp-uglify');
-var gutil = require('gulp-util');
+const browserify = require('browserify');
+const gulp = require('gulp');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const uglify = require('gulp-uglify');
+const gutil = require('gulp-util');
+const gulpLoadPlugins = require('gulp-load-plugins');
+
+const plugins = gulpLoadPlugins();
 
 gulp.task('build', function () {
   var b = browserify({
@@ -20,4 +23,12 @@ gulp.task('build', function () {
     .pipe(uglify())
     .on('error', gutil.log)
     .pipe(gulp.dest('../www/'));
+});
+
+gulp.task('test', function () {
+  return gulp.src(['**/*.test.js', '!node_modules/**'])
+    .pipe(plugins.mocha({
+      reporter: 'spec',
+      timeout: 15000
+    }));
 });

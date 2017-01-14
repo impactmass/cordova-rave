@@ -24,22 +24,22 @@ let config = {
 };
 
 describe('utils', function () {
-  let amount = 1500;
-  let email = 's@g.co';
+  let options = {amount: 1500, 'customer_email':'s@g.co'};
+  let opts = _.assign({}, options, {amount: undefined});
 
   it('.mergeReqUserFields should override amount set in config with app-provided amount', function () {
-    let result = utils.mergeReqUserFields(amount, email, config);
+    let result = utils.mergeReqUserFields(options, config);
     expect(result.amount).to.equal(1500);
   });
 
   it('.mergeReqUserFields should keep amount set in config if no app-provided amount', function () {
-    let result = utils.mergeReqUserFields(undefined, email, config);
+    let result = utils.mergeReqUserFields(opts, config);
     expect(result.amount).to.equal(15);
   });
 
   it('.mergeReqUserFields should leave amount blank if no amount in config & no app-provided amount', function () {
-    let conf = _.assign(config, {'amount': ''});
-    let result = utils.mergeReqUserFields(undefined, email, conf);
+    let conf = _.assign({}, config, {'amount': ''});
+    let result = utils.mergeReqUserFields(opts, conf);
     expect(result.amount).to.equal('');
   });
 
@@ -48,7 +48,7 @@ describe('utils', function () {
   });
 
   it('.ensureRequired should resolve when customer_email is provided', function () {
-    let conf = _.assign(config, {'customer_email': 's@g.co'});
+    let conf = _.assign({}, config, {'customer_email': 's@g.co'});
     return utils.ensureRequired(conf).should.be.fulfilled;
   });
 });

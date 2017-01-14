@@ -23,7 +23,11 @@ This ultimately creates a `rave.js` file into your `www` directory. Link to this
 ### Usage
 Completing the setup above exposes a `initRavePay` function for you to call to tigger the payment modal.
 
-Basic Usage: `initRavePay(customer_email, amount, onclose, callback)`
+Basic Usage: `initRavePay(options)`
+* options.customer_email
+* options.amount
+* options.onclose (function) - Set behaviour onclose of the modal
+* options.callback (function) - Set how you want to respond after payment is done
 
 The fields you pass here gets merged (with preference) on your app-wide setup done above.
 This final config is then passed Rave. See below the full Rave options.

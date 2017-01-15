@@ -9,7 +9,7 @@ This module helps you easily integrate Rave into your Cordova builds. Rave lets 
 ### Installation
 In your app directory:
 
-`git clone https://github.com/impactmass/cordova-rave.git`
+`npm install --save cordova-rave`
 
 ### Setup 
 Two steps:

@@ -9,12 +9,12 @@ This module helps you easily integrate Rave into your Cordova builds. Rave lets 
 ### Installation
 In your app directory:
 
-`npm install --save cordova-rave`
+`npm install cordova-rave`
 
 ### Setup 
 Two steps:
 
-First, `cd cordova-rave && npm start`
+First, `cd node_modules/cordova-rave && npm start`
 
 This will prompt you for a few config values which you should get from your Rave dashboard. After which it creates a config file in the directory.
 You can modify this file later if you need to.

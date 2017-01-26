@@ -22,7 +22,7 @@ gulp.task('build', function () {
     .pipe(buffer())
     .pipe(uglify())
     .on('error', gutil.log)
-    .pipe(gulp.dest('../www/'));
+    .pipe(gulp.dest('../../www/'));
 });
 
 gulp.task('test', function () {

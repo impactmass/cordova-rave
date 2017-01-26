@@ -1,6 +1,6 @@
 {
   "name": "cordova-rave",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cordova extension to add Rave Pay Button into your hybrid app builds",
   "main": "lib/index.js",
   "dependencies": {

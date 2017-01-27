@@ -4,7 +4,6 @@ const Joi = require('joi');
 
 const base = {
   'PBFPubKey': Joi.string().required(),
-  'txref': Joi.string(),
   'amount': Joi.number().allow(''),
   'customer_email': Joi.string().email().allow(''),
   'currency': Joi.string().empty('').default('NGN'),

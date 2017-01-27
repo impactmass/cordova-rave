@@ -21,22 +21,24 @@ You can modify this file later if you need to.
 
 Second, `npm run build`
 This ultimately creates a `rave.js` file into your `www` directory. Link to this file in your root index template. 
+If you modify your config.json at anytime, you need to run the build again.
 
 ### Usage
 Completing the setup above exposes a `initRavePay` function for you to call to tigger the payment modal.
 
 Basic Usage: `initRavePay(options)`
-* options.customer_email
-* options.amount
+* options.customer_email - (Required if customer_phone is not passed) Email of the customer
+* txref - Transaction Reference (Required) (Unique per transaction) 
+* options.amount (if not passed, the Rave modal shows amount input)
 * options.onclose (function) - Set behaviour onclose of the modal
 * options.callback (function) - Set how you want to respond after payment is done
 
 The fields you pass here gets merged (with preference) on your app-wide setup done above.
-This final config is then passed Rave. See below the full Rave options.
+This final config is then passed Rave. See below more Rave options.
 
 ```
+
 PBFPubKey - (Required) Public key of the merchant
-txref - (Required) (Unique) Reference
 amount - (Required) Amount to charge
 currency - (Optional, defaults to NGN) Currency to charge the card in
 country - (Optional, defaults to NG)
@@ -49,6 +51,7 @@ custom_description - (Optional) Text to be displayed as a short modal descriptio
 redirect_url - (Optional) URL to redirect to when transaction is completed
 custom_logo - (Optional) Link to the Logo image
 meta-[custom_param] - (Optional) Any other custom data you wish to pass (Without the square braces)
+
 ```
 
 ### Support :

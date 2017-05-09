@@ -3,6 +3,7 @@
 const Joi = require('joi');
 
 const base = {
+  'liveMode': Joi.string().empty('').default('y').valid(['y', 'n']),
   'PBFPubKey': Joi.string().required(),
   'amount': Joi.number().allow(''),
   'customer_email': Joi.string().email().allow(''),

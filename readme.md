@@ -29,6 +29,7 @@ If you modify your config.json at anytime, you need to run the build again.
 Completing the setup above exposes a `initRavePay` function for you to call to tigger the payment modal.
 
 Basic Usage: `initRavePay(options)`
+* options.liveMode - (y/n) for setup only. gets the required script for live or test environment
 * options.customer_email - (Required if customer_phone is not passed) Email of the customer
 * txref - Transaction Reference (Required) (Unique per transaction)
 * options.amount (if not passed, the Rave modal shows amount input)

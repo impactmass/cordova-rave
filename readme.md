@@ -16,7 +16,7 @@ Two steps:
 
 First, `cd node_modules/cordova-rave && npm start`
 
-*NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)*
+**NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)**
 
 This step will prompt you for a few config values which you should get from your Rave dashboard; except the last prompt (liveMode).
 The liveMode value either `y` or `n` used to change the Rave script used in your build from test url to live url. If you've signed up

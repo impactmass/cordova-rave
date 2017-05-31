@@ -11,7 +11,8 @@ const base = {
   'custom_title': Joi.string().allow(''),
   'custom_description': Joi.string().allow(''),
   'redirect_url': Joi.string().uri().empty('').default(''),
-  'custom_logo': Joi.string().uri().empty('').default('')
+  'custom_logo': Joi.string().uri().empty('').default(''),
+  'liveMode': Joi.string() // not saved intentionally since it's only used on "npm start"
 };
 
 const dynamicFields = {

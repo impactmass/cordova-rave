@@ -1,6 +1,6 @@
 {
   "name": "cordova-rave",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Cordova extension to add Rave Pay Button into your hybrid app builds",
   "main": "lib/index.js",
   "dependencies": {
@@ -19,6 +19,11 @@
     "browserify": "^13.3.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-load-plugins": "^1.4.0",
@@ -35,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git:"
+    "url": "https://github.com/impactmass/cordova-rave"
   },
   "bugs": {
     "url": "https://github.com/impactmass/cordova-rave/issues",

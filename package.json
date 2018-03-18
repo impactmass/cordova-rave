@@ -48,6 +48,13 @@
     "url": "https://github.com/impactmass/cordova-rave/issues",
     "email": "seundotme@gmail.com"
   },
+  "release": {
+    "analyzeCommits": {
+      "releaseRules": [
+        {"type": "docs", "release": "patch"}
+      ]
+    }
+  },
   "browser": {
     "joi": "joi-browser"
   },

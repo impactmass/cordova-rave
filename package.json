@@ -36,6 +36,7 @@
   "scripts": {
     "prestart": "npm install",
     "start": "node .",
+    "test": "npx gulp test",
     "build": "gulp build"
   },
   "repository": {

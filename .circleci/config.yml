@@ -35,6 +35,18 @@ jobs:
             - v1-dependencies-
       - run: npm test
 
+  publish:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run:
+          name: Run Semantic Release
+          command: npx semantic-release
+
 workflows:
   version: 2
   build_publish:
@@ -43,3 +55,7 @@ workflows:
       - test:
           requires:
             - build
+      - publish:
+          requires:
+            - test
+

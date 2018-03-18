@@ -6,6 +6,9 @@ This module helps you easily integrate Rave into your Cordova builds. Rave lets 
 
 ![e.g](https://cloud.githubusercontent.com/assets/5229321/21958475/be1763c2-daaf-11e6-8df0-75f2e4f0168e.gif)
 
+## Important Issue
+[OTP Modal Issue](https://github.com/impactmass/cordova-rave/issues/19): Transactions requiring OTP confirmation opens up in a browser window that leaves the app's context. This is due to the way this package is structured to use only the web layer. A big re-write effort is [in-progress](https://github.com/impactmass/cordova-rave2) to resolve this issue. Please ensure you review this short-coming before using this package.
+
 ### Installation
 In your app directory:
 

@@ -16,10 +16,13 @@ Two steps:
 
 First, `cd node_modules/cordova-rave && npm start`
 
-NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)
+**NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)**
 
-This step will prompt you for a few config values which you should get from your Rave dashboard. After which it creates a config file in the directory.
-You can modify this file later if you need to.
+This step will prompt you for a few config values which you should get from your Rave dashboard; except the last prompt (liveMode).
+The liveMode value either `y` or `n` used to change the Rave script used in your build from test url to live url. If you've signed up
+here `https://ravepay.co`, enter `y` for this option.
+
+Completing this step creates a config file in the directory. You can modify this file later if you need to.
 
 Second, `npm run build`
 This ultimately creates a `rave.js` file into your `www` directory. Link to this file in your root index template.
@@ -64,5 +67,3 @@ meta-[custom_param] - (Optional) Any other custom data you wish to pass (Without
 ### License :
 
 The code is available under MIT license.
-
-

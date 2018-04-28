@@ -9,12 +9,12 @@ This module helps you easily integrate Rave into your Cordova builds. Rave lets 
 ## Important Issue
 [OTP Modal Issue](https://github.com/impactmass/cordova-rave/issues/19): Transactions requiring OTP confirmation opens up in a browser window that leaves the app's context. This is due to the way this package is structured to use only the web layer. A big re-write effort is [in-progress](https://github.com/impactmass/cordova-rave2) to resolve this issue. Please ensure you review this short-coming before using this package.
 
-### Installation
+## Installation
 In your app directory:
 
 `npm install cordova-rave`
 
-### Setup
+## Setup
 Two steps:
 
 First, `cd node_modules/cordova-rave && npm start`
@@ -31,7 +31,7 @@ Second, `npm run build`
 This ultimately creates a `rave.js` file into your `www` directory. Link to this file in your root index template.
 If you modify your config.json at anytime, you need to run the build again.
 
-### Usage
+## Usage
 Completing the setup above exposes a `initRavePay` function for you to call to tigger the payment modal.
 
 Basic Usage: `initRavePay(options)`

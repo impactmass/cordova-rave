@@ -27,22 +27,22 @@ The following steps will get you up and running.
 
 1. Create a sample cordova project in your favorite directory
 
-**NOTE:** You can skip this step if you already have a cordova project
-```
-cordova create hello com.example.hello HelloWorld
-```
-*This command will create the required directory structure for your cordova app. By default, the cordova create script generates a skeletal web-based application whose home page is the project's www/index.html file.*
+    **NOTE:** You can skip this step if you already have a cordova project
+    ```
+    cordova create hello com.example.hello HelloWorld
+    ```
+    *This command will create the required directory structure for your cordova app. By default, the cordova create script generates a skeletal web-based application whose home page is the project's www/index.html file.*
 
 2. Test your sample project to be sure everything is working fine.
 
-*We would be testing in the browser environment. To test on other environments check out the cordova documentation on [android](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [ios](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).*
-Run the following commands in order
-```
-cd hello
-cordova platform add browser
-cordova run browser
-```
-If everything works out. Life is good. **Moving On**
+    *We would be testing in the browser environment. To test on other environments check out the cordova documentation on [android](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [ios](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).*
+    Run the following commands in order
+    ```
+    cd hello
+    cordova platform add browser
+    cordova run browser
+    ```
+    If everything works out. Life is good. **Moving On**
 
 3. Install Rave
     - Navigate into your app directory (if you aren't already there). If you are using the same directory as this documentation, do ```cd hello```
@@ -138,6 +138,90 @@ If everything works out. Life is good. **Moving On**
         'txref': 'CD-102297-RV098299'
     });
     ```
+    Below is an example of what your index.html may look like
+
+    ```
+    <!DOCTYPE html>
+    <!--
+        Licensed to the Apache Software Foundation (ASF) under one
+        or more contributor license agreements.  See the NOTICE file
+        distributed with this work for additional information
+        regarding copyright ownership.  The ASF licenses this file
+        to you under the Apache License, Version 2.0 (the
+        "License"); you may not use this file except in compliance
+        with the License.  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing,
+        software distributed under the License is distributed on an
+        "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied.  See the License for the
+        specific language governing permissions and limitations
+        under the License.
+    -->
+    <html>
+        <head>
+            <!--
+            Customize this policy to fit your own app's needs. For more guidance, see:
+                https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+            Some notes:
+                * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+                * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+                * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                    * Enable inline JS: add 'unsafe-inline' to default-src
+            -->
+            <meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; img-src * data:; default-src gap://ready file://* *; script-src 'self' 'unsafe-inline' 'unsafe-eval' * ; style-src 'self' 'unsafe-inline' *">
+            <meta name="format-detection" content="telephone=no">
+            <meta name="msapplication-tap-highlight" content="no">
+            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+            <link rel="stylesheet" type="text/css" href="css/index.css">
+            <title>Hello World</title>
+        </head>
+        <body>
+            <div class="app">
+                <h1>Apache Cordova</h1>
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="pay()">Pay Now</button>
+                </div>
+                <script type="text/javascript" src="cordova.js"></script>
+                <script type="text/javascript" src="js/index.js"></script>
+                <script type="text/javascript" src="rave.js"></script>
+                <script>
+                    function pay(){
+                        initRavePay({
+                            'PBFPubKey': 'FLWPUBK-ba0a57153f497c03bf34a9e296aa9439-X',
+                            'amount': '1',
+                            'currency': 'NGN',
+                            'country': 'NG',
+                            'customer_email': 'kwakujosh@gmail.com',
+                            'customer_firstname': 'Jon',
+                            'customer_lastname': 'Snow',
+                            'pay_button_text': '',
+                            'custom_title': '',
+                            'custom_description': '',
+                            'redirect_url': 'https://agile-journey-11424.herokuapp.com',
+                            'custom_logo': '',
+                            'txref': 'CD-102297-RV098299'
+                        });
+                    }
+                </script>
+        </body>
+    </html>
+    ```
+
+6. Run app
+
+    Before you test the app. 
+    - Add ```<allow-navigation href="*">``` to your config.xml
+    - Replace the meta tag that sets your ```Content-Security-Policy````with this
+    ```
+    <meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; img-src * data:; default-src gap://ready file://* *; script-src 'self' 'unsafe-inline' 'unsafe-eval' * ; style-src 'self' 'unsafe-inline' *">
+    ```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system

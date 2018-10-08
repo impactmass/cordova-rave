@@ -2,14 +2,17 @@
 
  A Cordova extension to add [Rave](https://www.flutterwave.com) Pay Button into your hybrid apps builds.
 
+ ![e.g](https://cloud.githubusercontent.com/assets/5229321/21958475/be1763c2-daaf-11e6-8df0-75f2e4f0168e.gif)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+Ensure that you have signed up for a Rave account. If not, go [here](https://www.rave.flutterwave.com) to signup for a ```live``` account or [here](https://www.ravesandbox.flutterwave.com) to signup for a ```test``` account.
 
 Ensure that you have ```nodejs``` and ```npm``` installed. If download Nodejs from [here](https://nodejs.org) and install it.
-> Installing ```nodejs``` also install npm with it.
+> Installing ```nodejs``` also install ```npm``` with it.
 
 Once you have ```nodejs``` and ```npm``` installed, proceed install cordova using the command below
 
@@ -51,6 +54,8 @@ The following steps will get you up and running.
     npm install cordova-rave
     cd node_modules/cordova-rave && npm start 
     ```
+    **NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)**
+
     **NOTE:** Once the second command installs all the necessary dependencies, you will be prompted to enter some information. An example is shown below
 
     ```

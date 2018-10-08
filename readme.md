@@ -31,8 +31,8 @@ cordova create hello com.example.hello HelloWorld
 ```
 *This command will create the required directory structure for your cordova app. By default, the cordova create script generates a skeletal web-based application whose home page is the project's www/index.html file.*
 
-2. Test your sample project to be sure everything is working fine
-*We would be testing in the browser environment. To test on other environments check out the cordova documentation on [android](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [ios](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html)*
+2. Test your sample project to be sure everything is working fine.
+*We would be testing in the browser environment. To test on other environments check out the cordova documentation on [android](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [ios](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).*
 Run the following commands in order
 ```
 cd hello
@@ -50,33 +50,57 @@ If everything works out. Life is good. **Moving On**
     ```
     **NOTE:** Once the second command installs all the necessary dependencies, you will be prompted to enter some information. An example is shown below
     >prompt: PBFPubKey:  FLWPUBK-98765445678900987698765567-X
+
     >prompt: amount:  1
+
     >prompt: customer_email:  user@user.com
+
     >prompt: currency:  NGN
+
     >prompt: country:  Nigeria
+
     >prompt: custom_title:  Cordovey
+
     >prompt: custom_description:  Testing
+
     >prompt: redirect_url:  https://yourredirecturl.com
-    >prompt: payment_plan_id:  1511
+
+    >prompt: payment_plan_id:  1000
+
     >prompt: payment_options:
+
     >prompt: subaccounts:  []
-    >prompt: custom_logo:
+
+    >prompt: custom_logo: logo.png
+
     >prompt: liveMode:  yes
+
 
     ```
     PBFPubKey: This is your Rave public key and can be gotten from your rave dashboard
+
     amount: The amount you want to charge your customers. If omitted, A customer will be able to specify the amount
+
     customer_email: this is the merchant's email address
+
     currency: The currency you want to charge your customers in. If omitted, it defaults to NGN
+
     country: The merchant's country. Defaults to Nigeria
+
     custom_title: A title for your payment
+
     custom_description: Text describing what your customers are paying for
+    
     redirect_url: This is the url that rave sends the response of your transaction to. It should be configured to handle a get request. If not supplied, no response will be sent from Rave
+
     payment_plan_id: If you want to bill your customers recurrently, pass in the payment plan id here. It must be an integer
-    payment_options: This allows you select the payment option you want for your users. see Choose [Payment Methods](https://developer.flutterwave.com/docs/splitting-payment-methods) for more 
-    info
+
+    payment_options: This allows you select the payment option you want for your users.
+
     subaccounts: This is an array of objects containing the subaccount IDs to split the payment into.
+
     custom_logo: Link to the Logo image.
+    
     liveMode: This determines if you want to use the live apis (yes) or the test apis (no). It is required
     ```
 

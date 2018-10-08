@@ -11,6 +11,9 @@ const base = {
   'custom_title': Joi.string().allow(''),
   'custom_description': Joi.string().allow(''),
   'redirect_url': Joi.string().uri().empty('').default(''),
+  'payment_plan_id': Joi.number().allow('').default(''),
+  'payment_options': Joi.string().empty('').allow(''),
+  'subaccounts': Joi.array().allow('',[]).default([]),
   'custom_logo': Joi.string().uri().empty('').default(''),
   'liveMode': Joi.string() // not saved intentionally since it's only used on "npm start"
 };

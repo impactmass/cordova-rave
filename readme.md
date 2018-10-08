@@ -24,7 +24,9 @@ sudo npm i -g cordova
 ### Installing
 
 The following steps will get you up and running.
+
 1. Create a sample cordova project in your favorite directory
+
 **NOTE:** You can skip this step if you already have a cordova project
 ```
 cordova create hello com.example.hello HelloWorld
@@ -32,6 +34,7 @@ cordova create hello com.example.hello HelloWorld
 *This command will create the required directory structure for your cordova app. By default, the cordova create script generates a skeletal web-based application whose home page is the project's www/index.html file.*
 
 2. Test your sample project to be sure everything is working fine.
+
 *We would be testing in the browser environment. To test on other environments check out the cordova documentation on [android](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [ios](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html).*
 Run the following commands in order
 ```
@@ -43,15 +46,16 @@ If everything works out. Life is good. **Moving On**
 
 3. Install Rave
     - Navigate into your app directory (if you aren't already there). If you are using the same directory as this documentation, do ```cd hello```
-    - Run the following command in order
+    - Run the following commands in order
     ```
     npm install cordova-rave
     cd node_modules/cordova-rave && npm start 
     ```
     **NOTE:** Once the second command installs all the necessary dependencies, you will be prompted to enter some information. An example is shown below
-    prompt: PBFPubKey:  FLWPUBK-98765445678900987698765567-X
 
     ```
+    prompt: PBFPubKey:  FLWPUBK-98765445678900987698765567-X
+
     prompt: amount:  1
 
     prompt: customer_email:  user@user.com
@@ -103,54 +107,37 @@ If everything works out. Life is good. **Moving On**
 
     >liveMode: This determines if you want to use the live apis (yes) or the test apis (no). It is required
 
-4. Generate rave.js
-While you're still in ```node_modules/cordova-rave``` directory, run:
-```
-npm run build
-```
-This ultimately creates a rave.js file into your www directory.
+4. Generate rave.js.
+    While you're still in ```node_modules/cordova-rave``` directory, run:
+    ```
+    npm run build
+    ```
+    This ultimately creates a rave.js file into your www directory.
 
 5. Link rave.js file to index.html in www directory
-Add the following script tag just before your closing script tag
-```
-<script type="text/javascript" src="rave.js"></script>
-```
->Voila!!!! With rave.js now linked, you can call the function below (as you please), passing in an object containing the properties listed above. An example is shown below
-```
-initRavePay({
-    'PBFPubKey': 'FLWPUBK-54567898978675645342334567-X',
-    'amount': '0',
-    'currency': 'NGN',
-    'country': 'NG',
-    'customer_email': 'user@example.com',
-    'customer_firstname': 'Jon',
-    'customer_lastname': 'Snow',
-    'pay_button_text': 'Pay now',
-    'custom_title': '',
-    'custom_description': '',
-    'redirect_url': 'https://www.google.com',
-    'custom_logo': '',
-    'txref': 'CD-102297-RV098299'
-});
-```
 
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
+    Add the following script tag just before your closing script tag
+    ```
+    <script type="text/javascript" src="rave.js"></script>
+    ```
+    >Voila!!!! With rave.js now linked, you can call the function below (as you please), passing in an object containing the properties listed above. An example is shown below
+    ```
+    initRavePay({
+        'PBFPubKey': 'FLWPUBK-54567898978675645342334567-X',
+        'amount': '0',
+        'currency': 'NGN',
+        'country': 'NG',
+        'customer_email': 'user@example.com',
+        'customer_firstname': 'Jon',
+        'customer_lastname': 'Snow',
+        'pay_button_text': 'Pay now',
+        'custom_title': '',
+        'custom_description': '',
+        'redirect_url': 'https://www.google.com',
+        'custom_logo': '',
+        'txref': 'CD-102297-RV098299'
+    });
+    ```
 ## Running the tests
 
 Explain how to run the automated tests for this system

@@ -49,61 +49,90 @@ If everything works out. Life is good. **Moving On**
     cd node_modules/cordova-rave && npm start 
     ```
     **NOTE:** Once the second command installs all the necessary dependencies, you will be prompted to enter some information. An example is shown below
-    >prompt: PBFPubKey:  FLWPUBK-98765445678900987698765567-X
-
-    >prompt: amount:  1
-
-    >prompt: customer_email:  user@user.com
-
-    >prompt: currency:  NGN
-
-    >prompt: country:  Nigeria
-
-    >prompt: custom_title:  Cordovey
-
-    >prompt: custom_description:  Testing
-
-    >prompt: redirect_url:  https://yourredirecturl.com
-
-    >prompt: payment_plan_id:  1000
-
-    >prompt: payment_options:
-
-    >prompt: subaccounts:  []
-
-    >prompt: custom_logo: logo.png
-
-    >prompt: liveMode:  yes
-
+    prompt: PBFPubKey:  FLWPUBK-98765445678900987698765567-X
 
     ```
-    PBFPubKey: This is your Rave public key and can be gotten from your rave dashboard
+    prompt: amount:  1
 
-    amount: The amount you want to charge your customers. If omitted, A customer will be able to specify the amount
+    prompt: customer_email:  user@user.com
 
-    customer_email: this is the merchant's email address
+    prompt: currency:  NGN
 
-    currency: The currency you want to charge your customers in. If omitted, it defaults to NGN
+    prompt: country:  Nigeria
 
-    country: The merchant's country. Defaults to Nigeria
+    prompt: custom_title:  Cordovey
 
-    custom_title: A title for your payment
+    prompt: custom_description:  Testing
 
-    custom_description: Text describing what your customers are paying for
-    
-    redirect_url: This is the url that rave sends the response of your transaction to. It should be configured to handle a get request. If not supplied, no response will be sent from Rave
+    prompt: redirect_url:  https://yourredirecturl.com
 
-    payment_plan_id: If you want to bill your customers recurrently, pass in the payment plan id here. It must be an integer
+    prompt: payment_plan_id:  1000
 
-    payment_options: This allows you select the payment option you want for your users.
+    prompt: payment_options:
 
-    subaccounts: This is an array of objects containing the subaccount IDs to split the payment into.
+    prompt: subaccounts:  []
 
-    custom_logo: Link to the Logo image.
-    
-    liveMode: This determines if you want to use the live apis (yes) or the test apis (no). It is required
+    prompt: custom_logo: logo.png
+
+    prompt: liveMode:  yes
     ```
 
+    >PBFPubKey: This is your Rave public key and can be gotten from your rave dashboard
+
+    >amount: The amount you want to charge your customers. If omitted, A customer will be able to specify the amount
+
+    >customer_email: this is the merchant's email address
+
+    >currency: The currency you want to charge your customers in. If omitted, it defaults to NGN
+
+    >country: The merchant's country. Defaults to Nigeria
+
+    >custom_title: A title for your payment
+
+    >custom_description: Text describing what your customers are paying for
+    
+    >redirect_url: This is the url that rave sends the response of your transaction to. It should be configured to handle a get request. If not supplied, no response will be sent from Rave
+
+    >payment_plan_id: If you want to bill your customers recurrently, pass in the payment plan id here. It must be an integer
+
+    >payment_options: This allows you select the payment option you want for your users.
+
+    >subaccounts: This is an array of objects containing the subaccount IDs to split the payment into.
+
+    >custom_logo: Link to the Logo image.
+
+    >liveMode: This determines if you want to use the live apis (yes) or the test apis (no). It is required
+
+4. Generate rave.js
+While you're still in ```node_modules/cordova-rave``` directory, run:
+```
+npm run build
+```
+This ultimately creates a rave.js file into your www directory.
+
+5. Link rave.js file to index.html in www directory
+Add the following script tag just before your closing script tag
+```
+<script type="text/javascript" src="rave.js"></script>
+```
+>Voila!!!! With rave.js now linked, you can call the function below (as you please), passing in an object containing the properties listed above. An example is shown below
+```
+initRavePay({
+    'PBFPubKey': 'FLWPUBK-54567898978675645342334567-X',
+    'amount': '0',
+    'currency': 'NGN',
+    'country': 'NG',
+    'customer_email': 'user@example.com',
+    'customer_firstname': 'Jon',
+    'customer_lastname': 'Snow',
+    'pay_button_text': 'Pay now',
+    'custom_title': '',
+    'custom_description': '',
+    'redirect_url': 'https://www.google.com',
+    'custom_logo': '',
+    'txref': 'CD-102297-RV098299'
+});
+```
 
 
 A step by step series of examples that tell you how to get a development env running

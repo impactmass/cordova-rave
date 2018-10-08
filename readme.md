@@ -1,69 +1,154 @@
-# Cordova Rave
+# Project Title
 
-> A Cordova extension to add [Rave](https://www.flutterwave.com) Pay Button into your hybrid apps builds.
+ A Cordova extension to add [Rave](https://www.flutterwave.com) Pay Button into your hybrid apps builds.
 
-This module helps you easily integrate Rave into your Cordova builds. Rave lets you receive payments locally and internationally with no hassles and zero set up fees. Read more about Rave [here](https://www.flutterwave.com).
+## Getting Started
 
-![e.g](https://cloud.githubusercontent.com/assets/5229321/21958475/be1763c2-daaf-11e6-8df0-75f2e4f0168e.gif)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Installation
-In your app directory:
+### Prerequisites
 
-`npm install cordova-rave`
+Ensure that you have ```nodejs``` and ```npm``` installed. If download Nodejs from [here](https://nodejs.org) and install it.
+> Installing ```nodejs``` also install npm with it.
 
-### Setup
-Two steps:
-
-First, `cd node_modules/cordova-rave && npm start`
-
-**NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)**
-
-This step will prompt you for a few config values which you should get from your Rave dashboard; except the last prompt (liveMode).
-The liveMode value either `y` or `n` used to change the Rave script used in your build from test url to live url. If you've signed up
-here `https://ravepay.co`, enter `y` for this option.
-
-Completing this step creates a config file in the directory. You can modify this file later if you need to.
-
-Second, `npm run build`
-This ultimately creates a `rave.js` file into your `www` directory. Link to this file in your root index template.
-If you modify your config.json at anytime, you need to run the build again.
-
-### Usage
-Completing the setup above exposes a `initRavePay` function for you to call to tigger the payment modal.
-
-Basic Usage: `initRavePay(options)`
-* options.customer_email - (Required if customer_phone is not passed) Email of the customer
-* txref - Transaction Reference (Required) (Unique per transaction)
-* options.amount (if not passed, the Rave modal shows amount input)
-* options.onclose (function) - Set behaviour onclose of the modal
-* options.callback (function) - Set how you want to respond after payment is done
-
-The fields you pass here gets merged (with preference) on your app-wide setup done above.
-This final config is then passed Rave. See below more Rave options.
+Once you have ```nodejs``` and ```npm``` installed, proceed install cordova using the command below
 
 ```
-
-PBFPubKey - (Required) Public key of the merchant
-amount - (Required) Amount to charge
-currency - (Optional, defaults to NGN) Currency to charge the card in
-country - (Optional, defaults to NG)
-customer_email - (Required if customer_phone is not passed) Email of the customer
-customer_firstname - (Required if customer_email is not passed) Phone number of the customer
-customer_lastname -(Optional) Full name of the customer
-pay_button_text - (Optional) Text to be displayed on the pay button
-custom_title - (Optional) Text to be displayed as the title of the payment modal
-custom_description - (Optional) Text to be displayed as a short modal description
-redirect_url - (Optional) URL to redirect to when transaction is completed
-custom_logo - (Optional) Link to the Logo image
-meta-[custom_param] - (Optional) Any other custom data you wish to pass (Without the square braces)
-
+npm i -g cordova
+```
+**NOTE:** if you are a MAC or Linux user, you might need to append ```sudo``` before ```npm i -g cordova``` __i.e__
+```
+sudo npm i -g cordova
 ```
 
-### Support :
+### Installing
 
-* For any bugs about this module, please feel free to report here.
-* And you are welcome to fork and submit pull requests.
+The following steps will get you up and running.
+1. Create a sample cordova project in your favorite directory
+**NOTE:** You can skip this step if you already have a cordova project
+```
+cordova create hello com.example.hello HelloWorld
+```
+*This command will create the required directory structure for your cordova app. By default, the cordova create script generates a skeletal web-based application whose home page is the project's www/index.html file.*
 
-### License :
+2. Test your sample project to be sure everything is working fine
+*We would be testing in the browser environment. To test on other environments check out the cordova documentation on [android](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html) and [ios](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html)*
+Run the following commands in order
+```
+cd hello
+cordova platform add browser
+cordova run browser
+```
+If everything works out. Life is good. **Moving On**
 
-The code is available under MIT license.
+3. Install Rave
+    - Navigate into your app directory (if you aren't already there). If you are using the same directory as this documentation, do ```cd hello```
+    - Run the following command in order
+    ```
+    npm install cordova-rave
+    cd node_modules/cordova-rave && npm start 
+    ```
+    **NOTE:** Once the second command installs all the necessary dependencies, you will be prompted to enter some information. An example is shown below
+    >prompt: PBFPubKey:  FLWPUBK-98765445678900987698765567-X
+    >prompt: amount:  1
+    >prompt: customer_email:  user@user.com
+    >prompt: currency:  NGN
+    >prompt: country:  Nigeria
+    >prompt: custom_title:  Cordovey
+    >prompt: custom_description:  Testing
+    >prompt: redirect_url:  https://yourredirecturl.com
+    >prompt: payment_plan_id:  1511
+    >prompt: payment_options:
+    >prompt: subaccounts:  []
+    >prompt: custom_logo:
+    >prompt: liveMode:  yes
+
+    ```
+    PBFPubKey: This is your Rave public key and can be gotten from your rave dashboard
+    amount: The amount you want to charge your customers. If omitted, A customer will be able to specify the amount
+    customer_email: this is the merchant's email address
+    currency: The currency you want to charge your customers in. If omitted, it defaults to NGN
+    country: The merchant's country. Defaults to Nigeria
+    custom_title: A title for your payment
+    custom_description: Text describing what your customers are paying for
+    redirect_url: This is the url that rave sends the response of your transaction to. It should be configured to handle a get request. If not supplied, no response will be sent from Rave
+    payment_plan_id: If you want to bill your customers recurrently, pass in the payment plan id here. It must be an integer
+    payment_options: This allows you select the payment option you want for your users. see Choose [Payment Methods](https://developer.flutterwave.com/docs/splitting-payment-methods) for more 
+    info
+    subaccounts: This is an array of objects containing the subaccount IDs to split the payment into.
+    custom_logo: Link to the Logo image.
+    liveMode: This determines if you want to use the live apis (yes) or the test apis (no). It is required
+    ```
+
+
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
+

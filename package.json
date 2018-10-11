@@ -1,7 +1,7 @@
 {
   "name": "cordova-rave",
   "version": "1.2.0",
-  "description": "Cordova extension to add Rave Pay Button into your hybrid app builds",
+  "description": "Cordova extension to add Rave Pay Button into your hybrid app",
   "main": "lib/index.js",
   "dependencies": {
     "bluebird": "^3.4.7",
@@ -53,7 +53,5 @@
     "rave",
     "pay",
     "accept payment"
-  ],
-  "author": "Seun Martins <seundotme@gmail.com>",
-  "license": "MIT"
+  ]
 }

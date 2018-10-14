@@ -24,13 +24,13 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-load-plugins": "^1.4.0",
-    "gulp-mocha": "^3.0.1",
+    "gulp-mocha": "^6.0.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "semantic-release": "^15.1.7",
+    "semantic-release": "^15.10.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -51,7 +51,10 @@
   "release": {
     "analyzeCommits": {
       "releaseRules": [
-        {"type": "docs", "release": "patch"}
+        {
+          "type": "docs",
+          "release": "patch"
+        }
       ]
     }
   },

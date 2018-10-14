@@ -65,5 +65,7 @@
     "rave",
     "pay",
     "accept payment"
-  ]
+  ],
+  "author": "Seun Martins <seundotme@gmail.com>",
+  "license": "MIT"
 }

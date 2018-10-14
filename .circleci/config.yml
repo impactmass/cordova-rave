@@ -8,15 +8,15 @@ defaults: &defaults
 jobs:
   build:
     <<: *defaults
-    dependencies:
-      pre:
-        - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
     steps:
       - checkout
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
+      - run:
+          name: NPM config
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       - run:
           name: NPM Install
           command: npm install
@@ -58,6 +58,7 @@ workflows:
       - publish:
           requires:
             - test
+            - build
           filters:
             branches:
               only: master

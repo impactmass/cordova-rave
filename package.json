@@ -1,6 +1,6 @@
 {
   "name": "cordova-rave",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Cordova extension to add Rave Pay Button into your hybrid app",
   "main": "lib/index.js",
   "dependencies": {
@@ -24,27 +24,39 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-load-plugins": "^1.4.0",
-    "gulp-mocha": "^3.0.1",
+    "gulp-mocha": "^6.0.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
+    "semantic-release": "^15.10.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "prestart": "npm install",
     "start": "node .",
+    "test": "npx gulp test",
     "build": "gulp build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/impactmass/cordova-rave"
+    "url": "git+https://github.com/impactmass/cordova-rave.git"
   },
   "bugs": {
     "url": "https://github.com/impactmass/cordova-rave/issues",
     "email": "seundotme@gmail.com"
+  },
+  "release": {
+    "analyzeCommits": {
+      "releaseRules": [
+        {
+          "type": "docs",
+          "release": "patch"
+        }
+      ]
+    }
   },
   "browser": {
     "joi": "joi-browser"

@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 Ensure that you have signed up for a Rave account. If not, go [here](https://www.rave.flutterwave.com) to signup for a ```live``` account or [here](https://www.ravesandbox.flutterwave.com) to signup for a ```test``` account.
@@ -52,7 +52,7 @@ The following steps will get you up and running.
     - Run the following commands in order
     ```
     npm install cordova-rave
-    cd node_modules/cordova-rave && npm start 
+    cd node_modules/cordova-rave && npm start
     ```
     **NB: If you get a warning of outdated npm dependency/DOS issue, please [read this](https://github.com/impactmass/cordova-rave/issues/11#issuecomment-293965034)**
 
@@ -99,7 +99,7 @@ The following steps will get you up and running.
     >custom_title: A title for your payment
 
     >custom_description: Text describing what your customers are paying for
-    
+
     >redirect_url: This is the url that rave sends the response of your transaction to. It should be configured to handle a get request. If not supplied, no response will be sent from Rave
 
     >payment_plan_id: If you want to bill your customers recurrently, pass in the payment plan id here. It must be an integer

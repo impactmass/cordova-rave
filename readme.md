@@ -4,6 +4,11 @@
 
  ![e.g](https://cloud.githubusercontent.com/assets/5229321/21958475/be1763c2-daaf-11e6-8df0-75f2e4f0168e.gif)
 
+
+**UPDATE (FOR IOS)**
+
+If you are developing for IOS, ensure that the version of Xcode you are running is **10.0** (the latest version). Using a lower version causes the build to fail.
+
 ## Getting Started
 
 These instructions will get you up and running on your local machine for development and testing purposes. See Deployment section for notes on how to deploy the project on a live system.

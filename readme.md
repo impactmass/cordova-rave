@@ -1,3 +1,5 @@
+## NB: Not maintained anymore. Use https://github.com/Flutterwave/cordova-rave
+
 # Cordova Rave
 
  A Cordova extension to add [Rave](https://www.flutterwave.com) Pay Button into your hybrid apps builds.

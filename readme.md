@@ -1,4 +1,4 @@
-## NB: Not maintained anymore. Use https://github.com/Flutterwave/cordova-rave
+## Note: Not maintained anymore. Use https://github.com/Flutterwave/cordova-rave
 
 # Cordova Rave
 
